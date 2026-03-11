@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./photos&icon/e-icon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Premium Style Dress - Ecomus Fashion</title>
+  <meta name="description"
+    content="Shop the Premium Style Dress at Ecomus. A lightweight, elegant maxi dress perfect for any occasion. Made from sustainable fabrics with a flawless silhouette." />
+  <meta name="keywords"
+    content="premium style dress, maxi dress, sustainable fashion, elegant dress, luxury wear, Ecomus fashion" />
+  <meta name="author" content="Ecomus Fashion" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Premium Style Dress - Ecomus Fashion" />
+  <meta property="og:description"
+    content="A lightweight, elegant maxi dress perfect for any occasion. Made from sustainable fabrics with a flawless silhouette." />
+  <meta property="og:type" content="product" />
+  <style>
+    :root {
+      --primary-color: #111111;
+      --secondary-color: #555555;
+      --accent-color: #d4af37;
+      --bg-color: #fafafa;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-tital {
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    /* Header (Glassmorphism) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: padding 0.3s ease;
+    }
+
+    .brand-tital {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: -1px;
+      background: linear-gradient(45deg, #ff007a, #7928ca, #00f2fe, #ff007a);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gradientFlow 4s linear infinite;
+    }
+
+    .brand-tital .bi {
+      font-size: 24px;
+      background: inherit;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--primary-color);
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: var(--transition-smooth);
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    .icon-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .icon-bar span {
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .icon-bar span:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .navlogo {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      margin-top: 100px;
+      padding: 0 5%;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      color: var(--secondary-color);
+    }
+
+    .breadcrumb a {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    .breadcrumb span {
+      margin: 0 10px;
+      font-size: 0.8rem;
+    }
+
+    /* Product Detail Layout */
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1440px;
+      margin: 40px auto 80px;
+      padding: 0 5%;
+    }
+
+    /* Image Gallery */
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #eee;
+      cursor: crosshair;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail-list {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .thumbnail-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 120px;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      overflow: hidden;
+      opacity: 0.6;
+      transition: var(--transition-smooth);
+      flex-shrink: 0;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail:hover,
+    .thumbnail.active {
+      opacity: 1;
+      border-color: var(--primary-color);
+    }
+
+    /* Product Info */
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #ffb800;
+      font-size: 1.1rem;
+    }
+
+    .rating-text {
+      color: var(--secondary-color);
+      font-size: 0.95rem;
+      margin-left: 5px;
+    }
+
+    .product-price {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .product-price del {
+      font-size: 1.4rem;
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    .product-desc-short {
+      color: var(--secondary-color);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Selectors (Color & Size) */
+    .selector-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .selector-title span {
+      color: var(--secondary-color);
+      font-weight: 400;
+    }
+
+    .color-options {
+      display: flex;
+      gap: 15px;
+    }
+
+    .color-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .color-btn:hover,
+    .color-btn.active {
+      transform: scale(1.1);
+      border-color: var(--primary-color);
+      padding: 2px;
+      background-clip: content-box;
+    }
+
+    .size-options {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .size-btn {
+      border: 1px solid #ddd;
+      background: transparent;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      color: var(--primary-color);
+    }
+
+    .size-btn:hover,
+    .size-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+
+    .size-guide {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      color: var(--secondary-color);
+      cursor: pointer;
+    }
+
+    /* Actions (Quantity & Buttons) */
+    .action-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 55px;
+    }
+
+    .qty-btn {
+      width: 45px;
+      height: 100%;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .qty-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .qty-input {
+      width: 50px;
+      height: 100%;
+      border: none;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: inherit;
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .qty-input::-webkit-outer-spin-button,
+    .qty-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .add-to-cart-large {
+      flex: 1;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 55px;
+    }
+
+    .add-to-cart-large:hover {
+      background: var(--accent-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .wishlist-btn {
+      width: 55px;
+      height: 55px;
+      border: 1px solid #ddd;
+      background: transparent;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .wishlist-btn:hover {
+      border-color: var(--primary-color);
+      color: red;
+    }
+
+    .buy-now-large {
+      width: 100%;
+      background: var(--accent-color);
+      color: var(--primary-color);
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      height: 55px;
+    }
+
+    .buy-now-large:hover {
+      background: var(--primary-color);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Delivery Info */
+    .delivery-info {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    .delivery-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .delivery-item:not(:last-child) {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .delivery-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .delivery-text h4 {
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .delivery-text p {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
+
+    /* Accordion Details */
+    .product-accordion {
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #eee;
+    }
+
+    .accordion-header {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.15rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+
+    .accordion-header:hover {
+      color: var(--accent-color);
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: var(--secondary-color);
+      font-size: 1.05rem;
+    }
+
+    .accordion-content.active {
+      max-height: 500px;
+      padding-bottom: 20px;
+    }
+
+    .accordion-header.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Related Products */
+    .related-products {
+      max-width: 1440px;
+      margin: 80px auto;
+      padding: 0 5%;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px 30px;
+    }
+
+    .item {
+      cursor: pointer;
+    }
+
+    .img-wrapper {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      background-color: #eee;
+      aspect-ratio: 3/4;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .item:hover .img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .badge-new {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #fff;
+      color: #111;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-to-cart-btn {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .item:hover .add-to-cart-btn {
+      bottom: 20px;
+      opacity: 1;
+    }
+
+    .add-to-cart-btn:hover {
+      background: var(--accent-color);
+      color: #111;
+    }
+
+    .item-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .money {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      display: flex;
+      gap: 10px;
+    }
+
+    .money del {
+      color: #999;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Premium Footer */
+    .footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 80px 5% 30px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      max-width: 1440px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 50px;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-brand .bi {
+      color: #fff;
+    }
+
+    .footer-text {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      max-width: 300px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icon:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      color: #111;
+    }
+
+    .footer-heading {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .footer-links-list li a {
+      color: #aaa;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-links-list li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links-list li a:hover {
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+
+    .footer-links-list li a:hover::after {
+      width: 100%;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .newsletter-form input {
+      padding: 15px 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .newsletter-form button {
+      padding: 15px 20px;
+      background-color: #fff;
+      color: var(--primary-color);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form button:hover {
+      background-color: var(--accent-color);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+      color: #aaa;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      .product-container {
+        gap: 40px;
+      }
+
+      .product-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+      }
+
+      .product-gallery {
+        position: static;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+      }
+
+      nav ul.show {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      nav ul li {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .navlogo {
+        display: block;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-brand {
+        justify-content: center !important;
+      }
+
+      .footer-text {
+        margin: 0 auto 25px;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <a href="F_Ecomus.html" class="brand-tital">
+      <span class="bi bi-browser-edge"></span>comus
+    </a>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="F_Ecomus.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="product.html" class="active">Product</a></li>
+        <li><a href="about.html">Pages</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="checkout.html">Buy Now</a></li>
+      </ul>
+    </nav>
+    <div class="icon-bar">
+      <span class="bi bi-search"></span>
+      <span class="bi bi-person"></span>
+      <span class="bi bi-heart"></span>
+      <span class="bi bi-shop"></span>
+    </div>
+    <div class="navlogo" id="toggle-menu">
+      <span class="bi bi-list"></span>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <a href="F_Ecomus.html">Home</a> <i class="bi bi-chevron-right"></i>
+    <a href="shop.html">Shop</a> <i class="bi bi-chevron-right"></i>
+    <span>Premium Style Dress</span>
+  </div>
+
+  <!-- Product Detail Section -->
+  <section class="product-container">
+    <!-- Image Gallery -->
+    <div class="product-gallery">
+      <div class="main-image">
+        <img id="main-product-image"
+          src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=600&auto=format&fit=crop"
+          alt="Premium Style Dress" />
+      </div>
+      <div class="thumbnail-list">
+        <div class="thumbnail active" onclick="changeImage('./photos&icon/g1.webp', this)">
+          <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=600&auto=format&fit=crop"
+            alt="Thumbnail 1" />
+        </div>
+        <div class="thumbnail" onclick="changeImage('./photos&icon/g2.webp', this)">
+          <img src="https://images.unsplash.com/photo-1515347619252-8d7607730eec?q=80&w=600&auto=format&fit=crop"
+            alt="Thumbnail 2" />
+        </div>
+        <div class="thumbnail" onclick="changeImage('./photos&icon/g3.webp', this)">
+          <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=600&auto=format&fit=crop"
+            alt="Thumbnail 3" />
+        </div>
+        <div class="thumbnail" onclick="changeImage('./photos&icon/g4.webp', this)">
+          <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?q=80&w=600&auto=format&fit=crop"
+            alt="Thumbnail 4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h1 class="product-title">Premium Style Dress</h1>
+
+      <div class="product-meta">
+        <div class="rating">
+          <span class="bi bi-star-fill"></span>
+          <span class="bi bi-star-fill"></span>
+          <span class="bi bi-star-fill"></span>
+          <span class="bi bi-star-fill"></span>
+          <span class="bi bi-star-half"></span>
+          <span class="rating-text">4.5 (128 Reviews)</span>
+        </div>
+        <div style="color: var(--secondary-color); font-size: 0.95rem">
+          SKU:
+          <span style="font-weight: 500; color: var(--primary-color)">EC-2025-DRS</span>
+        </div>
+      </div>
+
+      <div class="product-price">
+        <del>$150.00</del>
+        $95.00
+      </div>
+
+      <p class="product-desc-short">
+        Elevate your wardrobe with our Premium Style Dress. Crafted from
+        breathable, high-quality fabric, it offers a flattering silhouette
+        perfect for any occasion. Experience luxury comfort and timeless
+        elegance.
+      </p>
+
+      <!-- Color Selector -->
+      <div>
+        <div class="selector-title">Color: <span>Midnight Black</span></div>
+        <div class="color-options">
+          <div class="color-btn active" style="background-color: #111" onclick="selectColor(this, 'Midnight Black')">
+          </div>
+          <div class="color-btn" style="background-color: #f7f7f7; border: 1px solid #ddd"
+            onclick="selectColor(this, 'Pearl White')"></div>
+          <div class="color-btn" style="background-color: #8b0000" onclick="selectColor(this, 'Ruby Red')"></div>
+          <div class="color-btn" style="background-color: #004d40" onclick="selectColor(this, 'Emerald Green')"></div>
+        </div>
+      </div>
+
+      <!-- Size Selector -->
+      <div>
+        <div class="selector-title">
+          Size: <span>M</span>
+          <span class="size-guide"><i class="bi bi-rulers"></i> Size Guide</span>
+        </div>
+        <div class="size-options">
+          <button class="size-btn" onclick="selectSize(this)">S</button>
+          <button class="size-btn active" onclick="selectSize(this)">
+            M
+          </button>
+          <button class="size-btn" onclick="selectSize(this)">L</button>
+          <button class="size-btn" onclick="selectSize(this)">XL</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-row">
+        <div class="quantity-selector">
+          <button class="qty-btn" onclick="updateQuantity(-1)">-</button>
+          <input type="number" id="qty-input" class="qty-input" value="1" min="1" max="10" />
+          <button class="qty-btn" onclick="updateQuantity(1)">+</button>
+        </div>
+        <button class="add-to-cart-large">
+          <i class="bi bi-cart2"></i> Add to Cart
+        </button>
+        <button class="wishlist-btn">
+          <i class="bi bi-heart"></i>
+        </button>
+      </div>
+      <button class="buy-now-large">Buy It Now</button>
+
+      <!-- Delivery & Return -->
+      <div class="delivery-info">
+        <div class="delivery-item">
+          <div class="delivery-icon"><i class="bi bi-truck"></i></div>
+          <div class="delivery-text">
+            <h4>Free Shipping & Returns</h4>
+            <p>
+              On all orders over $100. Delivered within 3-5 business days.
+            </p>
+          </div>
+        </div>
+        <div class="delivery-item">
+          <div class="delivery-icon"><i class="bi bi-shield-check"></i></div>
+          <div class="delivery-text">
+            <h4>Secure Payment</h4>
+            <p>Your payment information is processed securely.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Info -->
+      <div class="product-accordion">
+        <div class="accordion-item">
+          <div class="accordion-header active" onclick="toggleAccordion(this)">
+            Description
+            <i class="bi bi-chevron-down accordion-icon"></i>
+          </div>
+          <div class="accordion-content active">
+            <p>
+              The Premium Style Dress is designed with the modern woman in
+              mind. It features a tailored fit that effortlessly contours the
+              body while allowing for freedom of movement. The intricate
+              detailing and premium stitching ensure durability without
+              sacrificing aesthetic appeal. A must-have staple for your
+              evening wear collection.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            Materials & Care
+            <i class="bi bi-chevron-down accordion-icon"></i>
+          </div>
+          <div class="accordion-content">
+            <ul>
+              <li>75% Viscose, 20% Polyester, 5% Elastane</li>
+              <li>Machine wash cold with like colors</li>
+              <li>Do not bleach or tumble dry</li>
+              <li>Cool iron on reverse if needed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <h2 class="section-title">You May Also Like</h2>
+    <div class="shop-grid">
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=600&auto=format&fit=crop"
+            alt="Maxi dress" />
+          <div class="add-to-cart-btn">
+            <i class="bi bi-cart2"></i> Quick Add
+          </div>
+        </div>
+        <div class="rating">
+          <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+            class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+          <span style="
+                color: var(--secondary-color);
+                margin-left: 5px;
+                font-size: 0.85rem;
+              ">(5.0)</span>
+        </div>
+        <a href="#">
+          <div class="item-name">Elegant Maxi Dress</div>
+        </a>
+        <div class="money">$120</div>
+      </div>
+
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?q=80&w=600&auto=format&fit=crop"
+            alt="Maxi Green Dress" />
+          <div class="add-to-cart-btn">
+            <i class="bi bi-cart2"></i> Quick Add
+          </div>
+        </div>
+        <div class="rating">
+          <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+            class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star"></span>
+          <span style="
+                color: var(--secondary-color);
+                margin-left: 5px;
+                font-size: 0.85rem;
+              ">(4.0)</span>
+        </div>
+        <a href="#">
+          <div class="item-name">Emerald Maxi Gown</div>
+        </a>
+        <div class="money"><del>$180</del> $135</div>
+      </div>
+
+      <div class="item">
+        <div class="img-wrapper">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop"
+            alt="Girl style dress" />
+          <div class="add-to-cart-btn">
+            <i class="bi bi-cart2"></i> Quick Add
+          </div>
+        </div>
+        <div class="rating">
+          <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+            class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-half"></span>
+          <span style="
+                color: var(--secondary-color);
+                margin-left: 5px;
+                font-size: 0.85rem;
+              ">(4.7)</span>
+        </div>
+        <a href="#">
+          <div class="item-name">Summer Casual Dress</div>
+        </a>
+        <div class="money">$85</div>
+      </div>
+
+      <div class="item">
+        <div class="img-wrapper">
+          <span class="badge-new">Hot</span>
+          <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=600&auto=format&fit=crop"
+            alt="Handbag" />
+          <div class="add-to-cart-btn">
+            <i class="bi bi-cart2"></i> Quick Add
+          </div>
+        </div>
+        <div class="rating">
+          <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+            class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+          <span style="
+                color: var(--secondary-color);
+                margin-left: 5px;
+                font-size: 0.85rem;
+              ">(4.9)</span>
+        </div>
+        <a href="#">
+          <div class="item-name">Luxury Leather Tote</div>
+        </a>
+        <div class="money">$210</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-tital footer-brand" style="justify-content: flex-start">
+          <span class="bi bi-browser-edge"></span>comus
+        </div>
+        <p class="footer-text">
+          Elevating your everyday style with premium, curated fashion.
+          Discover elegance in every piece.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="F_Ecomus.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Customer Care</h4>
+        <ul class="footer-links-list">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p class="footer-text">
+          Subscribe to receive updates, access to exclusive deals, and more.
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 Ecomus Fashion. All Rights Reserved.
+      </div>
+      <div class="payment-icons">
+        <i class="bi bi-credit-card"></i>
+        <i class="bi bi-paypal"></i>
+        <i class="bi bi-stripe"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header Toggle & Scroll
+    const toggleMenu = document.getElementById("toggle-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    toggleMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    window.addEventListener("scroll", () => {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.style.padding = "10px 5%";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.05)";
+      } else {
+        header.style.padding = "15px 5%";
+        header.style.boxShadow = "none";
+      }
+    });
+
+    // Product Image Gallery
+    function changeImage(src, element) {
+      document.getElementById("main-product-image").src = src;
+      const thumbnails = document.querySelectorAll(".thumbnail");
+      thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+      element.classList.add("active");
+
+      // Simple scale effect on change
+      const mainImg = document.getElementById("main-product-image");
+      mainImg.style.transform = "scale(0.95)";
+      setTimeout(() => {
+        mainImg.style.transform = "scale(1)";
+      }, 150);
+    }
+
+    // Selectors
+    function selectColor(element, colorName) {
+      const colors = document.querySelectorAll(".color-btn");
+      colors.forEach((btn) => btn.classList.remove("active"));
+      element.classList.add("active");
+      element.parentElement.previousElementSibling.querySelector(
+        "span",
+      ).innerText = colorName;
+    }
+
+    function selectSize(element) {
+      const sizes = document.querySelectorAll(".size-btn");
+      sizes.forEach((btn) => btn.classList.remove("active"));
+      element.classList.add("active");
+      element.parentElement.previousElementSibling.querySelector(
+        "span",
+      ).innerText = element.innerText;
+    }
+
+    // Quantity
+    function updateQuantity(change) {
+      const input = document.getElementById("qty-input");
+      let newVal = parseInt(input.value) + change;
+      if (newVal >= 1 && newVal <= 10) {
+        input.value = newVal;
+      }
+    }
+
+    // Accordion
+    function toggleAccordion(element) {
+      element.classList.toggle("active");
+      const content = element.nextElementSibling;
+      if (content.classList.contains("active")) {
+        content.classList.remove("active");
+      } else {
+        content.classList.add("active");
+      }
+    }
+  </script>
+</body>
+
+</html>

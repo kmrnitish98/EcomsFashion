@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./photos&icon/e-icon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Shop Collections - Ecomus Premium Fashion</title>
+  <meta name="description"
+    content="Browse our complete collection of luxury fashion items. Find the perfect maxi dress, premium handbags, stylish shoes, and more at Ecomus Fashion." />
+  <meta name="keywords"
+    content="fashion shop, buy luxury clothes, premium dresses, designer handbags, fashion collections, online clothing store" />
+  <meta name="author" content="Ecomus Fashion" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Shop Collections - Ecomus Premium Fashion" />
+  <meta property="og:description"
+    content="Browse our complete collection of luxury fashion items. Discover elegance in every piece." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --primary-color: #111111;
+      --secondary-color: #555555;
+      --accent-color: #d4af37;
+      --bg-color: #fafafa;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .brand-tital {
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    /* Header (Glassmorphism) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: padding 0.3s ease;
+    }
+
+    .brand-tital {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: -1px;
+      background: linear-gradient(45deg, #ff007a, #7928ca, #00f2fe, #ff007a);
+      background-size: 300% auto;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gradientFlow 4s linear infinite;
+    }
+
+    .brand-tital .bi {
+      font-size: 24px;
+      background: inherit;
+      color: transparent !important;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--primary-color);
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: var(--transition-smooth);
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    .icon-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .icon-bar span {
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .icon-bar span:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .navlogo {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Shop Hero Banner */
+    .page-banner {
+      margin-top: 60px;
+      background: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1920&auto=format&fit=crop") center 30% / cover;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .page-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.6));
+    }
+
+    .page-banner-content {
+      position: relative;
+      z-index: 10;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-banner h1 {
+      font-size: 4rem;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .breadcrumb {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .breadcrumb a {
+      color: #ddd;
+    }
+
+    .breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .breadcrumb span {
+      margin: 0 10px;
+      color: var(--accent-color);
+    }
+
+    /* Shop Layout Grid */
+    .shop-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 50px;
+      max-width: 1440px;
+      margin: 60px auto;
+      padding: 0 5%;
+    }
+
+    /* Sidebar Filters */
+    .filters-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .filter-group h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+
+    .filter-list {
+      list-style: none;
+    }
+
+    .filter-list li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-list li:hover {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary-color);
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .filter-count {
+      font-size: 0.85rem;
+      color: #aaa;
+      background: #f5f5f5;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    /* Color Swatches */
+    .color-swathces {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .color-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: var(--transition-smooth);
+      border: 2px solid transparent;
+    }
+
+    .color-dot:hover {
+      transform: scale(1.1);
+      border-color: var(--primary-color);
+    }
+
+    /* Price Slider UI Mock */
+    .price-range {
+      width: 100%;
+      height: 6px;
+      background: #eee;
+      border-radius: 3px;
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .price-range-fill {
+      position: absolute;
+      left: 20%;
+      right: 30%;
+      height: 100%;
+      background: var(--primary-color);
+      border-radius: 3px;
+    }
+
+    .price-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .price-range-thumb.left {
+      left: 20%;
+    }
+
+    .price-range-thumb.right {
+      right: 30%;
+    }
+
+    /* Shop Main Content */
+    .shop-main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .shop-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .toolbar-left {
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .sort-dropdown {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    /* Product Cards */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px 30px;
+    }
+
+    .item {
+      cursor: pointer;
+    }
+
+    .img-wrapper {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      position: relative;
+      background-color: #eee;
+      aspect-ratio: 3/4;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .item:hover .img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .badge-new {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #fff;
+      color: #111;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-to-cart-btn {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-color);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .item:hover .add-to-cart-btn {
+      bottom: 20px;
+      opacity: 1;
+    }
+
+    .add-to-cart-btn:hover {
+      background: var(--accent-color);
+      color: #111;
+    }
+
+    .item-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .rating {
+      font-size: 0.85rem;
+      color: #ffb800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .rating span.text {
+      color: var(--secondary-color);
+      margin-left: 5px;
+    }
+
+    .money {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--primary-color);
+      display: flex;
+      gap: 10px;
+    }
+
+    .money del {
+      color: #999;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .page-btn {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .page-btn:hover,
+    .page-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+
+    /* Premium Footer */
+    .footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 80px 5% 30px;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      max-width: 1440px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 50px;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-brand .bi {
+      color: #fff;
+    }
+
+    .footer-text {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      max-width: 300px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.2rem;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icon:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+      color: #111;
+    }
+
+    .footer-heading {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .footer-links-list li a {
+      color: #aaa;
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-links-list li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links-list li a:hover {
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+
+    .footer-links-list li a:hover::after {
+      width: 100%;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .newsletter-form input {
+      padding: 15px 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .newsletter-form button {
+      padding: 15px 20px;
+      background-color: #fff;
+      color: var(--primary-color);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form button:hover {
+      background-color: var(--accent-color);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+      color: #aaa;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Media Queries */
+    @media (max-width: 1024px) {
+      .shop-layout {
+        grid-template-columns: 240px 1fr;
+        gap: 30px;
+      }
+
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .shop-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .filters-sidebar {
+        display: none;
+        /* In an actual app, implement a slide-out drawer */
+      }
+
+      .page-banner h1 {
+        font-size: 2.8rem;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease-in-out;
+      }
+
+      nav ul.show {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      nav ul li {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .navlogo {
+        display: block;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-brand {
+        justify-content: center !important;
+      }
+
+      .footer-text {
+        margin: 0 auto 25px;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">
+    <a href="F_Ecomus.html" class="brand-tital">
+      <span class="bi bi-browser-edge"></span>comus
+    </a>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="F_Ecomus.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="about.html">Pages</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="checkout.html">Buy Now</a></li>
+      </ul>
+    </nav>
+    <div class="icon-bar">
+      <span class="bi bi-search"></span>
+      <span class="bi bi-person"></span>
+      <span class="bi bi-heart"></span>
+      <span class="bi bi-shop"></span>
+    </div>
+    <div class="navlogo" id="toggle-menu">
+      <span class="bi bi-list"></span>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="page-banner-content">
+      <h1>Shop the Collection</h1>
+      <div class="breadcrumb">
+        <a href="F_Ecomus.html">Home</a> <span>/</span> Shop
+      </div>
+    </div>
+  </div>
+
+  <section class="shop-layout">
+    <!-- Sidebar Filters -->
+    <aside class="filters-sidebar">
+      <div class="filter-group">
+        <h3>Categories</h3>
+        <ul class="filter-list">
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" checked />
+              <span>All Dresses</span>
+            </div>
+            <span class="filter-count">124</span>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Accessories</span>
+            </div>
+            <span class="filter-count">45</span>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Handbags</span>
+            </div>
+            <span class="filter-count">32</span>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Shoes</span>
+            </div>
+            <span class="filter-count">28</span>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Men's Fashion</span>
+            </div>
+            <span class="filter-count">65</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="filter-group">
+        <h3>Price Range</h3>
+        <div class="price-range">
+          <div class="price-range-fill"></div>
+          <div class="price-range-thumb left"></div>
+          <div class="price-range-thumb right"></div>
+        </div>
+        <div style="
+              display: flex;
+              justify-content: space-between;
+              color: var(--secondary-color);
+              font-weight: 500;
+            ">
+          <span>$50</span>
+          <span>$500</span>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Colors</h3>
+        <div class="color-swathces">
+          <div class="color-dot" style="background-color: #000"></div>
+          <div class="color-dot" style="background-color: #fff; border: 1px solid #ddd"></div>
+          <div class="color-dot" style="background-color: #8b4513"></div>
+          <div class="color-dot" style="background-color: #d2b48c"></div>
+          <div class="color-dot" style="background-color: #2f4f4f"></div>
+          <div class="color-dot" style="background-color: #b22222"></div>
+          <div class="color-dot" style="background-color: #4682b4"></div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Size</h3>
+        <ul class="filter-list">
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Small (S)</span>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" checked />
+              <span>Medium (M)</span>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Large (L)</span>
+            </div>
+          </li>
+          <li>
+            <div class="checkbox-container">
+              <input type="checkbox" />
+              <span>Extra Large (XL)</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Shop Area -->
+    <main class="shop-main">
+      <div class="shop-toolbar">
+        <div class="toolbar-left">Showing 1–9 of 124 results</div>
+        <div class="toolbar-right">
+          <span>Sort by:</span>
+          <select class="sort-dropdown">
+            <option>Default Sorting</option>
+            <option>Popularity</option>
+            <option>Latest</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="shop-grid">
+        <!-- Item 1 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <span class="badge-new">New</span>
+            <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?q=80&w=600&auto=format&fit=crop"
+              alt="Style Dress" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-half"></span>
+            <span class="text">(4.5)</span>
+          </div>
+          <a href="product.html">
+            <div class="item-name">Premium Style Dress</div>
+          </a>
+          <div class="money"><del>$150</del> $95</div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?q=80&w=600&auto=format&fit=crop"
+              alt="Maxi dress" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+            <span class="text">(5.0)</span>
+          </div>
+          <a href="#">
+            <div class="item-name">Elegant Maxi Dress</div>
+          </a>
+          <div class="money">$120</div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?q=80&w=600&auto=format&fit=crop"
+              alt="Maxi Green Dress" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star"></span>
+            <span class="text">(4.0)</span>
+          </div>
+          <a href="#">
+            <div class="item-name">Emerald Maxi Gown</div>
+          </a>
+          <div class="money"><del>$180</del> $135</div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=600&auto=format&fit=crop"
+              alt="Girl style dress" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-half"></span>
+            <span class="text">(4.7)</span>
+          </div>
+          <a href="#">
+            <div class="item-name">Summer Casual Dress</div>
+          </a>
+          <div class="money">$85</div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <span class="badge-new">Hot</span>
+            <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=600&auto=format&fit=crop"
+              alt="Handbag" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span>
+            <span class="text">(4.9)</span>
+          </div>
+          <a href="#">
+            <div class="item-name">Luxury Leather Tote</div>
+          </a>
+          <div class="money">$210</div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="item">
+          <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=600&auto=format&fit=crop"
+              alt="Shoes" />
+            <div class="add-to-cart-btn">
+              <i class="bi bi-cart2"></i> Quick Add
+            </div>
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span
+              class="bi bi-star-fill"></span><span class="bi bi-star-fill"></span><span class="bi bi-star-half"></span>
+            <span class="text">(4.3)</span>
+          </div>
+          <a href="#">
+            <div class="item-name">Classic White Sneakers</div>
+          </a>
+          <div class="money"><del>$110</del> $89</div>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">...</button>
+        <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </main>
+  </section>
+
+  <!-- Footer identical to the main page -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-tital footer-brand" style="justify-content: flex-start">
+          <span class="bi bi-browser-edge"></span>comus
+        </div>
+        <p class="footer-text">
+          Elevating your everyday style with premium, curated fashion.
+          Discover elegance in every piece.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="F_Ecomus.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Customer Care</h4>
+        <ul class="footer-links-list">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p class="footer-text">
+          Subscribe to receive updates, access to exclusive deals, and more.
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2025 Ecomus Fashion. All Rights Reserved.
+      </div>
+      <div class="payment-icons">
+        <i class="bi bi-credit-card"></i>
+        <i class="bi bi-paypal"></i>
+        <i class="bi bi-stripe"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleMenu = document.getElementById("toggle-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    toggleMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    window.addEventListener("scroll", () => {
+      const header = document.getElementById("header");
+      if (window.scrollY > 50) {
+        header.style.padding = "10px 5%";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.05)";
+      } else {
+        header.style.padding = "15px 5%";
+        header.style.boxShadow = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
